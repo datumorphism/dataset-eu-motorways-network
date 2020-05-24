@@ -7,8 +7,6 @@ import pandas as pd
 logging.basicConfig()
 logger = logging.getLogger(__name__)
 
-DATA_REMOTE = "https://ec.europa.eu/eurostat/estat-navtree-portlet-prod/BulkDownloadListing?sort=1&file=data%2Ftgs00114.tsv.gz"
-CACHE_FOLDER = "/tmp"
 
 
 
@@ -112,7 +110,10 @@ def parse_data(data_local, parsed_data_local):
 
 if __name__ == "__main__":
 
-    DATA_LOCAL = "dataset/motorway-network.tsv"
+    DATA_REMOTE = "https://ec.europa.eu/eurostat/estat-navtree-portlet-prod/BulkDownloadListing?sort=1&file=data%2Ftgs00114.tsv.gz"
+    CACHE_FOLDER = "/tmp"
+
+    DATA_LOCAL = "/tmp/motorway-network.tsv"
     PARSED_DATA_LOCAL = {
         "unit_km": "dataset/motorway_network_unit_km.csv",
         "unit_km_per_thousand_square_km": "dataset/motorway_network_unit_km_per_thousand_square_km.csv"
